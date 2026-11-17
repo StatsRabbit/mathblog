@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "Converge In Probability and Converge Almost Surely.html",
+    "href": "Converge In Probability and Converge Almost Surely.html",
+    "title": "Converge In Probability and Converge Almost Surely",
+    "section": "",
+    "text": "初次讀到 Converge In Probability 和 Converge Almost Surely 時，我著實愣了一下， 看著兩個大同小異的定義，一時間還真分不清它們的差別，還想說數學家幹嘛沒事搞出兩個差不多的東西，還好後來藉著GPT老師，總算是稍微釐清了一點頭緒。\n接下來就一起來看看 Converge In Probability 和 Converge Almost Surely，以及兩者間的差別吧。"
+  },
+  {
+    "objectID": "Converge In Probability and Converge Almost Surely.html#定義與剖析",
+    "href": "Converge In Probability and Converge Almost Surely.html#定義與剖析",
+    "title": "Converge In Probability and Converge Almost Surely",
+    "section": "定義與剖析",
+    "text": "定義與剖析\n\n定義 1 (Converge in Probability) A sequence of random variables \\(X_n\\) is said to converge in probability to \\(X\\) if for all \\(\\varepsilon &gt; 0\\),\n\\[\n\\lim_{n\\to\\infty}\nP(d(X_n, X)&gt;\\varepsilon) = 0\n\\]\nand is denoted by \\(X_n \\xrightarrow{P} X\\).\n\n其實，Converge In Probability 的概念多少摻雜了點數列的味道。這點可以透過額外引進一個符號\\(S_n\\)來觀察： \\[ S_n = P(d(X_n, X)&gt;\\varepsilon) \\]\n於是乎定義就可以簡化成 \\(\\lim\\limits_{n\\to\\infty} S_n = 0\\)，是不是就成了數列收斂的概念！\n可是\\(S_n\\)收斂又代表什麼意思呢？\n我們知道 \\(P(\\cdot)\\) 這個記號本身表達的意函是 \\(P(\\{\\omega \\, | \\, X(\\omega)=x\\})\\)， 代表著某個事件發生的機率。也就是說定義中的 \\(d(X_n, X) &gt; \\varepsilon\\) 應該要被詮䆁成一個事件\\(E_n\\)：\n\\[\nE_n = \\{\\, \\omega \\,|\\, d(X_n(\\omega), X(\\omega)) &gt; \\varepsilon \\,\\}\n\\]\n也就是讓 \\(X_n(\\omega)\\)和\\(X(\\omega)\\) 之間差距超過控制的\\(\\omega\\)所形成的集合。\n因此， \\(S_n = P(E_n)\\) 的意思就是差距超過控制的集合所發生的機率， \\(S_n \\rightarrow 0\\) 則是差距超過控制的集合所發生的機率必須越來越小，最後收斂至0， 換句話說，就是 \\(E_n\\) 要越來越可控， 只不過此處所謂的可控是指犯錯的人越來越少，而非犯的錯越來越小 ——這也是 Converge In Probability 和 Converge Almost Surely 最核心的差異之處。\n\n定義 2 (Converge Almost Surely) A sequence of random variables \\(X_n\\) is said to converge almost surely to if \\(d(X_n, X) \\rightarrow 0\\) with probability one:\n\\[\nP(\\lim d(X_n, X) = 0) = 1\n\\]\nand is denoted by \\(X_n \\xrightarrow{as} X\\).\n\n上述定義中 \\(\\lim d(X_n, X) = 0\\) 可以詮䆁成：\n\\[\nE = \\{\\, \\omega \\,|\\, d(X_n(\\omega), X(\\omega)) \\rightarrow 0 \\,\\}\n\\]\n\\(E\\) 本身就是一個確定的事件，指的是能使 \\(X_n\\) 收斂至 \\(X\\) 的 \\(\\omega\\) 們，而 \\(P(E) = 1\\) 便是希望幾乎所有的 \\(\\omega\\) 都可以使 \\(X_n\\) 收斂至 \\(X\\)，也因此 Converge Almost Surely 自然蘊涵 Converge In Probability 的成立。\n最後附註一下， 定義 2 其實允許測度為零的事件集不必有 \\(E\\) 的收斂行為， 所以才是 Almost Surely。"
+  },
+  {
+    "objectID": "Converge In Probability and Converge Almost Surely.html#滿足-converge-in-probability-卻不是-converge-almost-surely-的例子",
+    "href": "Converge In Probability and Converge Almost Surely.html#滿足-converge-in-probability-卻不是-converge-almost-surely-的例子",
+    "title": "Converge In Probability and Converge Almost Surely",
+    "section": "滿足 Converge In Probability 卻不是 Converge Almost Surely 的例子",
+    "text": "滿足 Converge In Probability 卻不是 Converge Almost Surely 的例子\n看完上面的解䆁，各位看倌可能還是會覺得說的還不是很清楚—— 反正我當初是覺得自己的理解還不夠具體。 如果你也跟我一樣的話，以下GPT老師提供的例子或許能夠幫到你。\n假設 \\(X_n\\) 是一系列的脈充函數，下圖列出該數列的前七項，而且 \\(X = 0\\)，則 \\(X_n \\xrightarrow{P} X\\)，不過 \\(X_n\\) 並非 Converge Almost Surely 到 \\(X\\)。\n\n\n\n\n\n\n\n\n\n在這個例子中 \\(S_n = P(E_n)\\)，可以寫成以下的數列： \\[\n\\def\\mybreak{\\\\[6pt]}\n\\begin{aligned}\nS_1 &= 1/2 \\mybreak\nS_2 &= 1/2 \\mybreak\nS_3 &= 1/4 \\mybreak\nS_4 &= 1/4 \\mybreak\nS_5 &= 1/4 \\mybreak\nS_6 &= 1/4 \\mybreak\nS_7 &= 1/8\n\\end{aligned}\n\\]\n以此類推則會有，\\(S_n &lt; \\frac{1}{2^N}\\)，因此 \\(S_n \\rightarrow 0\\)， 也就是 \\(X_n \\xrightarrow{P} X\\)。\n然而，要是我們今天取 \\(\\omega = \\frac{1}{16}\\) 來觀察 \\(X_n(\\omega)\\) 的數值，則會發現： \\[\n\\def\\mybreak{\\\\[6pt]}\n\\begin{aligned}\nX_1(\\frac{1}{16}) &= 1 \\mybreak\nX_2(\\frac{1}{16}) &= 0 \\mybreak\nX_3(\\frac{1}{16}) &= 1 \\mybreak\nX_4(\\frac{1}{16}) &= 0 \\mybreak\nX_5(\\frac{1}{16}) &= 0 \\mybreak\nX_6(\\frac{1}{16}) &= 0 \\mybreak\nX_7(\\frac{1}{16}) &= 1\n\\end{aligned}\n\\]\n因為 \\(X_n\\) 循環式脈充的設計，不論 \\(n\\) 跑到多大，\\(X_n(\\omega)\\) 都還是有機會跳出1的數值。 更重要的是，這不僅僅是對 \\(\\omega = \\frac{1}{16}\\) 成立，更是對0到1之間所有的 \\(\\omega\\) 都成立， \\[\n\\lim\\limits_{n\\to\\infty} d(X_n(\\omega), X(\\omega)) \\neq 0,\\ \\forall \\omega\n\\]\n因此， \\[\nP(\\lim d(X_n, X) = 0) = 0 \\neq 1\n\\]\n\\(X_n\\) 並非 Converge Almost Surely 到 \\(X\\)。"
+  }
+]

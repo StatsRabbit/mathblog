@@ -1,0 +1,8 @@
+/* Definition 區塊 */
+.theorem.definition {
+    background-color: rgba(120, 140, 160, 0.08);
+    border-left: 3px solid #7895ad;
+    border-radius: 5px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+}
